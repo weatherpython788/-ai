@@ -2,8 +2,13 @@ import requests
 import streamlit as st
 from pypinyin import pinyin, Style
 
-WEATHER_KEY = "601244b473e8897f2cb7857d5c37e022"
-AI_KEY = "c7b239cd305b4065b77eac8fe9efb882.5aInqyp1MKxcb9Dh"
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+WEATHER_KEY = os.getenv("WEATHER_KEY")
+AI_KEY = os.getenv("AI_KEY")
 
 st.set_page_config(page_title="AI天气助手", page_icon="🌤️")
 st.title("🌤️ AI 智能天气助手")
